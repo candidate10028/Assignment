@@ -1,5 +1,6 @@
 #!/bin/bash
 
+curl -s https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway > "index.html"
 # requests a page, follwing redirects, and preps it for sed processing
 function get_page(){
     local projectpage_toril_hokseggen/index.html
