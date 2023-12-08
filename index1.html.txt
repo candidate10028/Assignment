@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -s https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway > "temp.html.txt"
+
