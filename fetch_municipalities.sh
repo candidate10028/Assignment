@@ -1,13 +1,13 @@
-t#!/bin/bash
+#!/bin/bash
 
 #Fetching the Wkik page
 url="https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway"
-curl -s "$url" > wikipedia_page.html 
+curl -s "$url" > wikipedia_page.html
 
 #Extracting the table with grep (find the right wikipage structure)
-grep -oP 'table class="sortable wikitable jquery-tablesorter".*?</table>' wikipedia_page.html > extracted_table.html
+awk '/<table class="sortable.wikitable.jquery-tablesorter"/,/</table>/' wikipedia_page.html > extracted_table.html
 
-cat <<EOL > output.html
+cat > output.html <<EOL
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -21,9 +21,9 @@ cat <<EOL > output.html
                 <p>This is a simple webpage served by Apache on Ubuntu.</p>
 
 $(cat extracted_table.html)
-        </body>
-        </html>
-        EOL
+</body>
+</html>
+EOL
 
-xdg-oben output.html
-        
+xdg-open output.html
+
