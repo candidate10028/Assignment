@@ -2,7 +2,7 @@
 
 # requests a page, follwing redirects, and preps it for sed processing
 function get_page(){
-    local projectpage_toril_hokseggen
+    local projectpage_toril_hokseggen/index.html
     url=$1
     fname=$2
 
