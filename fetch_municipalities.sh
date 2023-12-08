@@ -5,7 +5,7 @@ url="https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway"
 curl -s "$url" > wikipedia_page.html
 
 #Extracting the table with grep (find the right wikipage structure)
-awk '/<table class="sortable.wikitable.jquery-tablesorter"/,/</table>/' wikipedia_page.html > extracted_table.html
+awk '/<table class="sortable.wikitable.jquery-tablesorter"/,/</table>/' wikipedia_page.html | grep -o '<table[^>]*>.*</table>' > extracted_table.html
 
 cat > output.html <<EOL
         <!DOCTYPE html>
