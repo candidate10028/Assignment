@@ -5,6 +5,8 @@
 curl -s https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway > "wikipedia_page.html.txt"
 
 cat "wikipedia_page.html.txt" | tr -d '\n\t' > "wikipage.html.one.line.txt"
+sed -E 's|(<table class"sortable wikitable">)|\n\1\g' "wikipage.html.on.line.txt"
+
 #Extracting the table with grep (find the right wikipage structure)
 #awk '/<table class="sortable.wikitable.jquery-tablesorter"/,/</table>/' wikipedia_page.html > extracted_table.html
 #cat wikipedia_page.html | grep -A 100 '<table' | grep -B 100 '</table>' > extracted_table.html
