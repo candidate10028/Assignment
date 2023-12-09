@@ -19,4 +19,4 @@ grep -o '<tbody[ >].*<\/tbody' "test.txt" | sed -E 's|<tbody[^>]*>(.*)<\/tbody>|
 
 sed -E 's|<tr[^>]*>|\n|g' "test.txt" | sed '/^$/d'
 
-sed -E 's|<td[^>]*>|\t|g' "test.txt" | sed -E 's|<\/td>||g' > "extracted_table.html.txt" > test.txt
+sed -E 's|<td[^>]*>|\t|g' "test.txt" | sed -E 's|<\/td>||g' > "extracted_table.html.txt"
