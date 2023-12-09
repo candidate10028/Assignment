@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Fetching the Wkik page
-wget -O wikipedia_page.html https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway
-
+#wget -O wikipedia_page.html https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway
+curl -s https://en.wikipedia.org/wiki/List_of_municipalities_of_Norway > "wikipedia_page.html.txt"
 
 #Extracting the table with grep (find the right wikipage structure)
 #awk '/<table class="sortable.wikitable.jquery-tablesorter"/,/</table>/' wikipedia_page.html > extracted_table.html
