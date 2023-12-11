@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Assuming you have some content in "table.only.txt"
+# Reads content of the table.txt file, and stores it in the table_content variable
 table_content=$(cat "table.txt")
 
-# HTML template with embedded table content
+# Defines a multiline string as a HTML template
 page_template='<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,5 +21,5 @@ page_template='<!DOCTYPE html>
 </body>
 </html>'
 
-# Save the HTML content to "output.html"
+# Writes the content and saves it to the output.html file
 echo "$page_template" > "output.html"
